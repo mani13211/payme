@@ -14,9 +14,8 @@ const openRazer=async(data)=>{
         "order_id": data.id,
         "handler": async function (response){
           try{
-            let p =  await  fetch("https://payme-one.vercel.app/api/verifypay", {
+            let p =  await  fetch("http://localhost:3000/api/verifypay", {
              method: "POST", // or 'PUT'
-             origin: CORS_ALLOWED_ORGIN,
              optionsSuccessStatus: 200,
              headers: {
                "Content-Type": "application/json",
@@ -45,9 +44,8 @@ const openRazer=async(data)=>{
       const openCheckout=async()=> {
         const data={amount:"100"}
         try{
-         let p =  await fetch("https://payme-one.vercel.app/api/pay", {
+         let p =  await fetch("http://localhost:3000/api/pay", {
           method: "POST", // or 'PUT'
-          origin: CORS_ALLOWED_ORGIN,
           optionsSuccessStatus: 200,
           headers: {
             "Content-Type": "application/json",

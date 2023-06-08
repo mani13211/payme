@@ -31,10 +31,8 @@ export default  function Home() {
      // console.log(reader.readAsDataURL(image))
   
       const data={img_path:out}
-      const response = await fetch("https://payme-one.vercel.app/api/form", {
+      const response = await fetch("http://localhost:3000/api/form", {
         method: "POST", // or 'PUT'
-        origin: CORS_ALLOWED_ORGIN,
-        optionsSuccessStatus: 200,
         
         api: {
           bodyParser: {
