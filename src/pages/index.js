@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 export default  function Home() {
-  const [image, setimage] = useState()
+  const [image, setimage] = useState("")
   const [out,setout]=useState("")
 
   const handleChange= async(e)=>{
@@ -31,7 +31,7 @@ export default  function Home() {
      // console.log(reader.readAsDataURL(image))
   
       const data={img_path:out}
-      const response = await fetch("http://localhost:3000/api/form", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/form`, {
         method: "POST", // or 'PUT'
         
         api: {

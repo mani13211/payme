@@ -14,9 +14,8 @@ const openRazer=async(data)=>{
         "order_id": data.id,
         "handler": async function (response){
           try{
-            let p =  await  fetch("http://localhost:3000/api/verifypay", {
+            let p =  await  fetch(`${process.env.NEXT_PUBLIC_HOST}/api/verifypay`, {
              method: "POST", // or 'PUT'
-             optionsSuccessStatus: 200,
              headers: {
                "Content-Type": "application/json",
              },
@@ -44,9 +43,8 @@ const openRazer=async(data)=>{
       const openCheckout=async()=> {
         const data={amount:"100"}
         try{
-         let p =  await fetch("http://localhost:3000/api/pay", {
+         let p =  await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pay`, {
           method: "POST", // or 'PUT'
-          optionsSuccessStatus: 200,
           headers: {
             "Content-Type": "application/json",
           },
